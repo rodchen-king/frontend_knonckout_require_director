@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <main id="main"></main>
+  <main id="main" data-bind="template: { name: 'RequireIntroduction-html', data: require('RequireIntroduction-js').data, afterRender: require('RequireIntroduction-js').afterRender}"></main>
   <script data-main="/Scripts/framework/main" src="/Scripts/lib/require.js"></script>
 </body>
 </html>

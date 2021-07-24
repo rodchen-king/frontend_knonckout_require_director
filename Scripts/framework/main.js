@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-07-24 12:08:10
- * @LastEditTime: 2021-07-24 15:01:05
+ * @LastEditTime: 2021-07-24 16:11:30
  * @LastEditors: rodchen
  */
 var paths = {
@@ -53,29 +53,21 @@ require.config({
 			exports: 'Router'
 		},
 		'Custom': {
-            exports: 'Custom'
+      exports: 'Custom'
 		},
 		'Custom': ['Bootstrap'],
 		'Bootstrap': ['jquery']
 	}
 });
 
-require(["jquery", "RequireIntroduction-js", "text!RequireIntroduction-html"],
-    function ($, module, html) {
-        console.log("Start test require html!");
-        $('#main').html(html);
-        console.log("Start test require js!");
-        module.TestRequireJs();
-    }
-);
 
+require(["knockout", "RequireIntroduction-js", "knockout-amd-helpers", "text"], function (ko, RequireIntroduction) {
+	ko.bindingHandlers.module.baseDir = "modules";
 
-// require(["knockout", "knockout-amd-helpers", "text"], function (ko) {
-//     ko.bindingHandlers.module.baseDir = "modules";
-
-//     //fruits/vegetable modules have embedded template
-//     ko.bindingHandlers.module.templateProperty = "embeddedTemplate";
-// });
+	//fruits/vegetable modules have embedded template
+	ko.bindingHandlers.module.templateProperty = "embeddedTemplate";
+	ko.applyBindings(RequireIntroduction);
+});
 
 // require(['AppRouter'], function(){
 // });
