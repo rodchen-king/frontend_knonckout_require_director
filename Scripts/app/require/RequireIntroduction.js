@@ -1,15 +1,17 @@
-﻿define(['knockout'], function (ko) {
+﻿define(function () {
     function RequireIntroductionViewModel() {
-    var self = this;
- 
-    self.data = {
-        PageName: ko.observable('knockout')
+        var self = this;
+
+        self.init = function () { };
+
+        self.controllers = {
+            '/': function () { }
+        };
+
+        self.afterRender = function (element) {
+            console.log("Successful to load RequireIntroductionViewModel page");
+        };
     }
- 
-    self.afterRender = function () {
-        console.log('This is the function named afterRender in knockout.js');
-    }
-  }
- 
-return new RequireIntroductionViewModel();
+
+    return new RequireIntroductionViewModel();
 });

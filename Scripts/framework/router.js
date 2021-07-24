@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: rodchen
  * @Date: 2021-07-24 12:08:10
- * @LastEditTime: 2021-07-24 13:37:12
+ * @LastEditTime: 2021-07-24 19:59:11
  * @LastEditors: rodchen
  */
 define(['WebPageContrl', 'Routes', 'Router'], function (WebPageContrl, Routes, Router) {
@@ -12,7 +12,7 @@ define(['WebPageContrl', 'Routes', 'Router'], function (WebPageContrl, Routes, R
 		var values = value.split(' ');
 		var pageName = values[0];
 		routes[key] = function() {
-		    WebPageContrl.initJS(pageName);
+		  WebPageContrl.initJS(pageName);
 		};
 	});
 
